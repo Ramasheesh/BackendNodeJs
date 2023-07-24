@@ -1,0 +1,2 @@
+The Azure Account extension provides           a single Azure sign in and subscription
+filtering experience for    all other Azure extensions.
