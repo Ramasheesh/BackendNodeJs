@@ -9,6 +9,7 @@ function getInfoFromScoreCard(url){
     // we have a url from score card from all match 
     request(url , cb)
 }
+
 function cb(err,res,body){
     if(err){
         console.log("error" , err);
@@ -54,16 +55,19 @@ function getMatchDetails(html){
     for (let i = 0; i < resultTeam2.length-1; i++) {
         const IndexResultForTeam1 = selecTool(resultTeam1[i]);
         const IndexResultForTeam2 = selecTool(resultTeam2[i]);
-        console.log(i,": ", IndexResultForTeam1.text() , ' __Vs__ ' , IndexResultForTeam2.text());
-        // break;
+        console.log("Match B/w teams: ",i,": ", IndexResultForTeam1.text() , ' __Vs__ ' , IndexResultForTeam2.text());
+        break;
     }
     /*1: Result Of the Match*/
     let winResult = selecTool('p[class="ds-text-tight-s ds-font-regular ds-line-clamp-2 ds-text-typo"]')
+    // let winResult = selecTool(`div[class="ds-grow ds-px-4 ds-border-r ds-border-line-default-translucent"]`)
+    // let winResult = selecTool(`div[class="ds-p-4 hover:ds-bg-ui-fill-translucent ds-border-none ds-border-t ds-border-line"]`)
     // console.log('winResult: ', winResult.text());
+    // console.log('winResult: ', (winResult.text()).split(','));
     for (let i = 0; i < winResult.length-1; i++) {
         const IndexResult = selecTool(winResult[i]);
-        console.log('IndexResult: ' ,i,"", IndexResult.text());
-        // break;
+        console.log('MatchResult: ' ,i,"", IndexResult.text());
+        break;
         
     }
     
