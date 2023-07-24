@@ -1,2 +1,4 @@
-
+node_module
+package-lock.json
+package.json
 webScrapping

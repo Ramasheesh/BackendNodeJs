@@ -1,7 +1,7 @@
 {
-  "name": "projectmodule",
+  "name": "iplscrapping",
   "version": "1.0.0",
-  "description": "",
+  "description": "��#\u0000 \u0000B\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000N\u0000o\u0000d\u0000e\u0000J\u0000s\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "os": "^0.1.2"
-  }
+    "cheerio": "^1.0.0-rc.12",
+    "fs": "0.0.1-security",
+    "os": "^0.1.2",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ramasheesh/BackendNodeJs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ramasheesh/BackendNodeJs/issues"
+  },
+  "homepage": "https://github.com/Ramasheesh/BackendNodeJs#readme"
 }
