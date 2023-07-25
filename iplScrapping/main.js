@@ -4,7 +4,7 @@ const request = require("request");
 const cheerio = require('cheerio');
 const allMatch = require('./allMatch')
 
-let url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595"
+let url = "https://www.espncricinfo.com/series/indian-premier-league-2023-1345038"
 request(url,cb);
 function cb(err,res,body){
     if(err){
@@ -17,9 +17,8 @@ function cb(err,res,body){
 }
 function handleHtml(html){
     let selecTool = cheerio.load(html)
-    // let ancherEle = selecTool('div[class="ds-border-t ds-border-line  ds-text-center ds-py-2"]');
-    let ancherEle = selecTool('div[class="ds-border-t ds-border-line  ds-text-center ds-py-2"] a[href="/series/ipl-2020-21-1210595/match-schedule-fixtures-and-results"]')
-    // console.log(ancherEle.html());
+    let ancherEle = selecTool('a[href="/series/indian-premier-league-2023-1345038/match-schedule-fixtures-and-results"]')
+    // console.log(ancherEle.text());
 
     // attr method get the data from html body
     let reativeLink = ancherEle.attr("href");

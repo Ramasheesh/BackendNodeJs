@@ -2,11 +2,10 @@
 const request = require("request");
 // get the data from web to html body
 const cheerio = require('cheerio');
-const getScoreCard = require('./indfoscoreCard');
 
-let url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595"
-request(url,cb);
-function getAllMatch(url ,cb){
+const scoreCard = require("./scoreCard");
+
+function getAllMatch(url){
     // console.log("full link from allmatch: ",url);
     request(url ,cb)
 }
@@ -21,15 +20,17 @@ function cb(err,res,body){
 }
 function handleHtml(html){
     let selecTool = cheerio.load(html)
-    let allMatchEle = selecTool('a[href="/series/ipl-2020-21-1210595/match-schedule-fixtures-and-results"]')
+    // let allMatchEle = selecTool('a[href="/series/indian-premier-league-2023-1345038/gujarat-titans-vs-chennai-super-kings-1st-match-1359475/full-scorecard"]');
+    let allMatchEle = selecTool('a[class="ds-no-tap-higlight"]');
+
     // console.log('allMatchEle: ', allMatchEle.text());
-    console.log(allMatchEle.length);
-    for(let i =0 ; i<= allMatchEle.length-1 ; i++ ){
+
+    for(let i =88 ; i<= allMatchEle.length-1 ; i++ ){
         let allMatchLink = selecTool(allMatchEle[i]).attr('href')
         // console.log('allMatchLink: ',i,": ", allMatchLink);
         let fullLink = "https://www.espncricinfo.com" + allMatchLink;
-        // console.log('fullLink: ', fullLink);
-        getScoreCard.gifc(fullLink);
+        // console.log('fullLink: ',i, fullLink);
+        scoreCard.scoreCard(fullLink)
         break;
     }
 
